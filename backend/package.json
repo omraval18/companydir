@@ -1,7 +1,11 @@
 {
   "name": "backend",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build --outdir dist --target bun ./src/index.ts",
+    "check-types": "tsc -b",
+    "compile": "bun build --compile --minify --sourcemap --bytecode ./src/index.ts --outfile server",
+    "start": "bun run dist/index.js"
   },
   "dependencies": {
     "hono": "^4.10.1"
@@ -10,3 +14,4 @@
     "@types/bun": "latest"
   }
 }
+
