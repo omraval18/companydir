@@ -6,12 +6,14 @@ import type {
   ApiResponse,
 } from "../types/company";
 
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api";
 
 class ApiError extends Error {
   constructor(message: string, status: number, response?: any) {
     super(message);
     this.name = "ApiError";
+    console.log(status, response);
   }
 }
 

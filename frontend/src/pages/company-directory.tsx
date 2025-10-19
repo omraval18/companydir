@@ -54,9 +54,8 @@ export function CompanyDirectory() {
     isFetchingNextPage,
   } = useInfiniteCompanies(itemsPerPage, filters, sort);
 
-  const { data: industries = [], isLoading: industriesLoading } =
-    useIndustries();
-  const { data: locations = [], isLoading: locationsLoading } = useLocations();
+  const { data: industries = [] } = useIndustries();
+  const { data: locations = [] } = useLocations();
 
   const companies = companiesData?.data || [];
   const pagination = companiesData?.pagination;

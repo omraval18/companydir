@@ -9,12 +9,15 @@ type SortingDropdownProps = {
 
 const sortOptions: { value: SortOption; label: string }[] = [
   { value: "name", label: "Company Name (A-Z)" },
-  { value: "employees", label: "Employees (High to Low)" },
+  { value: "employees", label: "Employees (Low to High)" },
   { value: "founded", label: "Year Founded (Newest)" },
   { value: "industry", label: "Industry (A-Z)" },
 ];
 
-const SortingDropdown: React.FC<SortingDropdownProps> = ({ sortBy, onSortChange }) => {
+const SortingDropdown: React.FC<SortingDropdownProps> = ({
+  sortBy,
+  onSortChange,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -23,8 +26,6 @@ const SortingDropdown: React.FC<SortingDropdownProps> = ({ sortBy, onSortChange 
     onSortChange(option);
     setIsOpen(false);
   };
-
-  const currentLabel = sortOptions.find((opt) => opt.value === sortBy)?.label || "Sort By";
 
   return (
     <div className="relative inline-block text-left">

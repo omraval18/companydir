@@ -1534,7 +1534,7 @@ export const industries = [
   "Manufacturing",
   "Environmental",
   "Real Estate",
-  "Agriculture"
+  "Agriculture",
 ];
 
 export const locations = [
@@ -1554,5 +1554,5 @@ export const locations = [
   "Portland, OR",
   "Phoenix, AZ",
   "Dallas, TX",
-  "Atlanta, GA"
+  "Atlanta, GA",
 ];
