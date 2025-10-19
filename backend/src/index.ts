@@ -10,11 +10,15 @@ app.use("*", logger());
 app.use(
   "*",
   cors({
-    origin: ["http://localhost:5173", "http://localhost:3000"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:3000",
+      "https://companydir-88d4.vercel.app/",
+    ],
     allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowHeaders: ["Content-Type", "Authorization"],
     credentials: true,
-  })
+  }),
 );
 
 app.get("/", (c) => {
@@ -40,7 +44,7 @@ app.notFound((c) => {
       success: false,
       message: "Route not found",
     },
-    404
+    404,
   );
 });
 
@@ -52,7 +56,7 @@ app.onError((err, c) => {
       message: "Internal server error",
       error: err.message,
     },
-    500
+    500,
   );
 });
 
